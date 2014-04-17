@@ -1,0 +1,162 @@
+#d3-container {
+	font: 300 36px "Helvetica Neue";
+	height: 800px;
+	margin: 40px 120px 40px 120px;
+	overflow: hidden;
+	position: relative;
+	width: 960px;
+}
+
+#table-container {
+	position: absolute;
+	top: 40px;
+	left: 1200px;
+}
+
+#legend {
+	position: absolute;
+	top: 850px;
+	left: 170px;
+}
+
+a:link, a:visited {
+	color: #777;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #666;
+}
+
+blockquote {
+	margin: 0;
+}
+
+blockquote:before {
+	content: "“";
+	position: absolute;
+	left: -.4em;
+}
+
+blockquote:after {
+	content: "”";
+	position: absolute;
+}
+
+#d3-container > ul {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: 64px;
+}
+
+h1, h2, h3 {
+	font-weight: inherit;
+	margin: 0;
+}
+
+h2, h3 {
+	text-align: right;
+	font-size: inherit;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+h2 {
+	font-size: 24px;
+	position: absolute;
+}
+
+h3 {
+	bottom: -20px;
+	font-size: 18px;
+}
+
+.invert {
+	background: #1f1f1f;
+	color: #dcdccc;
+}
+
+.invert h2, .invert h3 {
+	color: #7f9f7f;
+}
+
+.string, .regexp {
+	color: #f39;
+}
+
+.keyword {
+	color: #00c;
+}
+
+.comment {
+	color: #777;
+	font-style: oblique;
+}
+
+.noCookies {
+	position: absolute;
+	left: 164px;
+	top: 84px;
+}
+
+.number {
+	color: #369;
+}
+
+.class, .special {
+	color: #1181B8;
+}
+
+#d3-container > svg {
+	position: absolute;
+	top: 0px;
+	left: -160px;
+}
+
+.right {
+	float: right;
+}
+
+.myImg {
+	text-align: center;
+	height: 30px;
+	width: 30px;
+}
+
+td.noBorder, .myImg {
+	border: none;
+}
+
+th {
+	text-align: left;
+}
+
+table {
+	border-collapse: collapse;
+	overflow: auto;
+}
+
+td {
+	border: 1px solid black;
+	padding-left: 5px;
+}
+
+td.button {
+	border: none;
+}
+
+td.cookie_count {
+	text-align: right;
+	width: 25px;
+}
+
+tbody.scrollContent {
+	display: block;
+	height: 550px;
+	width: 350px;
+	overflow: auto;
+}

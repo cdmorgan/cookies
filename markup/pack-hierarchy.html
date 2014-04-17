@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+		<link type="text/css" rel="stylesheet" href="../stylesheets/style.css"/>
+		<style type="text/css">
+			text {
+				font-size: 12px;
+				pointer-events: none;
+			}
+
+			text.parent {
+				fill: #1f77b4;
+			}
+
+			circle {
+				fill: #ccc;
+				stroke: #999;
+				pointer-events: all;
+			}
+
+			circle.parent {
+				fill: #1f77b4;
+				fill-opacity: .1;
+				stroke: steelblue;
+			}
+
+			circle.parent:hover {
+				stroke: #ff7f0e;
+				stroke-width: .5px;
+			}
+
+			circle.child {
+				pointer-events: none;
+			}
+
+			circle.tracker {
+				fill: #c02;
+			}
+
+			circle.session {
+				fill: #3c0;
+			}
+
+			circle.secure {
+				fill: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript" src="../scripts/d3.js"></script>
+		<script type="text/javascript" src="../scripts/d3.layout.js"></script>
+		<script src="../scripts/manager.js"></script>
+		<script src="../scripts/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="../scripts/background.js"></script>
+		<div id="d3-container"></div>
+		<div id="legend">
+			<table id="legendTable">
+				<tr class="header">
+					<th>Legend</th>
+				</tr>
+				<tr class="info">
+					<td class="noBorder">&emsp;</td>
+				</tr>
+				<tr class="info">
+					<td class="myImg"><image src="../img/green-circle.png"></image></td>
+					<td class="noBorder">= Session Cookies</td>
+					<td class="noBorder">&emsp;</td>
+					<td class="myImg"><image src="../img/red-circle.png"></image></td>
+					<td class="noBorder">= Cookies From Tracking Domain</td>
+					<td class="noBorder">&emsp;</td>
+					<td class="myImg"><image src="../img/yellow-circle.png"></image></td>
+					<td class="noBorder">= Secure Cookies</td>
+					<td class="noBorder">&emsp;</td>
+					<td class="myImg">Size</td>
+					<td class="noBorder">= relative to expiration date</td>
+				</tr>
+			</table>
+		</div>
+		<div id="table-container" class="right">
+			<button id="remove_button">
+				DELETE ALL!
+			</button>
+			<div id="filter_div">
+				<br />
+				Filter:
+				<input id="filter" type="text">
+				<button>
+					Clear Filter
+				</button>
+			</div>
+			<div id="options_div">
+				<br />
+				Show:
+				<select id="showLess">
+					<option value="all">All Cookies</option>
+					<option value="tracker">Tracking Cookies</option>
+					<option value="secure">Secure Cookies</option>
+				</select>
+			</div>
+			<br />
+			<div id="summary_div">
+				Showing <span id="filter_count"></span> of <span id="total_count"></span> cookie domains. <span id="delete_all_button"></span><br /><br />
+				You have <span id="cookie_count"></span> cookies on your computer.
+			</div>
+			<br />
+			<table id="cookies">
+				<tr class="header">
+					<th>Domain&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;#Cookies</th>
+				</tr>
+				<tbody class="scrollContent"></tbody>
+			</table>
+		</div>
+	</body>
+</html>
