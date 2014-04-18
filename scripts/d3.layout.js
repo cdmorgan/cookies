@@ -392,9 +392,7 @@
 				if ( typeof o.target == "number")
 					o.target = nodes[o.target];
 				distances[i] = linkDistance.call(this, o, i);
-				strengths[i] = linkStrength.call(this, o, i);
-				++o.source.weight;
-				++o.target.weight;
+				strengths[i] = linkStrength.call(this, o, i); ++o.source.weight; ++o.target.weight;
 			}
 
 			for ( i = 0; i < n; ++i) {
@@ -762,7 +760,7 @@
 		};
 
 		return stack;
-	}
+	};
 	function d3_layout_stackX(d) {
 		return d.x;
 	}

@@ -741,7 +741,7 @@ function d3_ease_linear(t) {
 function d3_ease_poly(e) {
   return function(t) {
     return Math.pow(t, e);
-  }
+  };
 }
 
 function d3_ease_sin(t) {
@@ -951,7 +951,7 @@ d3.interpolateObject = function(a, b) {
     for (k in i) c[k] = i[k](t);
     return c;
   };
-}
+};
 
 var d3_interpolate_number = /[-+]?(?:\d*\.?\d+)(?:[eE][-+]?\d+)?/g;
 
@@ -2186,7 +2186,7 @@ d3.timer = function(callback, delay, then) {
     d3_timer_interval = 1;
     d3_timer_frame(d3_timer_step);
   }
-}
+};
 
 function d3_timer_step() {
   var elapsed,
