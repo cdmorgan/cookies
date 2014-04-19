@@ -364,9 +364,7 @@ function getSize(epoch) {
 }
 
 function getJsonNoMatterWhat(url, callback) {
-	/* jQuery.getJSON fails silently when trying to get a local json file. jQuery.ajax
-	 * gets the data but then throws a mysterious error. However, the data is there and
-	 * perfectly parseable. Not sure why jQuery behaves this way but here's a workaround. */
+	//hack from chrollusion
 	jQuery.ajax({
 		url : url,
 		dataType : "json",
