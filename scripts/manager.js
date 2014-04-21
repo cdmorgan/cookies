@@ -417,8 +417,7 @@ function getValue() {
 }
 
 function loadVisualization() {
-	var $myVis = $('#d3-container');
-	$myVis.empty();
+	$('#d3-container').empty();
 
 	var val = getValue();
 	if (val.children.length > 0) {
@@ -433,7 +432,7 @@ function loadVisualization() {
 
 		var nodes = pack.nodes(root);
 		vis.selectAll("circle").data(nodes).enter().append("svg:circle").attr("class", function(d) {
-			return d.session ? "session" : d.tracker ? "tracker" : d.secure ? "secure" : d.children ? : "parent" : "child";
+			return d.session ? "session" : d.tracker ? "tracker" : d.secure ? "secure" : d.children ? "parent" : "child";
 		}).attr("cx", function(d) {
 			return d.x;
 		}).attr("cy", function(d) {
