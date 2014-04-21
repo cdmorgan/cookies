@@ -413,13 +413,7 @@ function stopListening() {
 
 function getValue() {
 	var val = $("#showLess").val();
-	if (val == "tracker") {
-		return trackingCookies;
-	} else if (val == "secure") {
-		return secureCookies;
-	} else {
-		return yourCookies;
-	}
+	return val == "tracker" ? trackingCookies : val == "secure" ? secureCookies : yourCookies;
 }
 
 function loadVisualization() {
@@ -439,14 +433,7 @@ function loadVisualization() {
 
 		var nodes = pack.nodes(root);
 		vis.selectAll("circle").data(nodes).enter().append("svg:circle").attr("class", function(d) {
-			if (d.session)
-				return "session";
-			else if (d.tracker)
-				return "tracker";
-			else if (d.secure)
-				return "secure";
-			else
-				return d.children ? "parent" : "child";
+			return d.session ? "session" : d.tracker ? "tracker" : d.secure ? "secure" : d.children ? : "parent" : "child";
 		}).attr("cx", function(d) {
 			return d.x;
 		}).attr("cy", function(d) {
