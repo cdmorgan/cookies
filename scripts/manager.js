@@ -10,7 +10,6 @@ if (!chrome.cookies) {
 	chrome.cookies = chrome.experimental.cookies;
 }
 
-// A simple Timer class.
 function Timer() {
 	this.start_ = new Date();
 
@@ -247,7 +246,6 @@ function reloadCookieTable() {
 var blacklist = deserialize(localStorage.blacklist) || {};
 
 function makeMyCookieObjects() {
-
 	var children = [];
 
 	for (var key in cache.cookies_) {
@@ -425,7 +423,6 @@ function getValue() {
 }
 
 function loadVisualization() {
-
 	var $myVis = $('#d3-container');
 	$myVis.empty();
 
@@ -502,7 +499,6 @@ function loadVisualization() {
 			node = d;
 			d3.event.stopPropagation();
 		}
-
 	} else {
 		var $container = $('#d3-container');
 		var $image = $(document.createElement('img'));
@@ -553,13 +549,11 @@ function formatTrackingCookies() {
 }
 
 function showCookies(val) {
-
 	makeMyCookieObjects();
 
 	(val == "tracker" || val == "secure") ? showSome() : showAll();
 
 	function showSome() {
-
 		var cookie = (val == "tracker") ? trackingCookies : secureCookies;
 
 		$("#filter_div").hide();
