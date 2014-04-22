@@ -41,12 +41,10 @@ function sortedKeys(array) {
 	return keys;
 }
 
-// Shorthand for document.querySelector.
 function select(selector) {
 	return document.querySelector(selector);
 }
 
-// An object used for caching data about the browser's cookies, which we update as notifications come in.
 function CookieCache() {
 	this.cookies_ = {};
 
@@ -395,6 +393,7 @@ window.onkeydown = function(event) {
 		resetFilter();
 	}
 };
+
 function listener(info) {
 	cache.remove(info.cookie);
 	if (!info.removed) {
@@ -486,9 +485,7 @@ function loadVisualization() {
 			d3.event.stopPropagation();
 		}
 	} else {
-		var $container = $('#d3-container');
-		var $image = $(document.createElement('img'));
-		$image.attr('src', '../img/no-cookies.png').addClass('noCookies').appendTo($container);
+		$(document.createElement('img')).attr('src', '../img/no-cookies.png').addClass('noCookies').appendTo($('#d3-container'));
 	}
 }
 
